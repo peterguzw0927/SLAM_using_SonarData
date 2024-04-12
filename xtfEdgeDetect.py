@@ -158,8 +158,8 @@ def read_xtf(path):
     sonar_packets = packets[pyxtf.XTFHeaderType.sonar]
 
     # Get data from sonar packets
+    # print([item.data[0] for item in sonar_packets])
     data_array = np.array([item.data[0] for item in sonar_packets])
-    print(data_array.shape)
     data_array2 = np.array([item.data[1] for item in sonar_packets])
 
     # Scale down the 16-bit values to 8-bit values
@@ -189,6 +189,8 @@ if __name__ == "__main__":
         path = os.path.join(directory, filename)
         if os.path.isfile(path):
             img2 = read_xtf(path)
+
+
             cv2.imshow("Original Input", img2)
             cv2.waitKey(0)
 
@@ -251,7 +253,7 @@ if __name__ == "__main__":
             cv2.imshow('Overlayed Result with Contour Centers', overlaid_img)
             cv2.waitKey(0)
 
-    cv2.destroyAllWindows()
+            cv2.destroyAllWindows()
 
 
 
