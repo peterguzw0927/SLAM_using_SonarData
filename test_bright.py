@@ -8,21 +8,25 @@ from xtfEdgeDetect import *
 
 def local_brightness(img, min_contour_area_threshold, max_contour_area_threshold):
 
-    # img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img_gray = img
-    inverted_img_gray = 255 - img_gray
+    original = img
+    img = 255 - img
 
     # Adjust contrast and brightness levels in the inverted grayscale image
     alpha = 2.5
-    beta = 20
-    high_contrast_result = cv2.convertScaleAbs(inverted_img_gray, alpha=alpha, beta=beta)
-    img_blur = cv2.GaussianBlur(high_contrast_result, (1, 1), 0)
+    beta = -120
+    img = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
 
-    cv2.imshow("blur", img_blur)
+    img = cv2.GaussianBlur(img, (51, 51), 1000)
+    _, img = cv2. threshold(img, 245, 255, cv2.THRESH_BINARY)
+    img = cv2.GaussianBlur(img, (81, 81), 1000)
+    _, img = cv2. threshold(img, 170, 255, cv2.THRESH_BINARY)
+
+
+    cv2.imshow("blur", img)
     cv2.waitKey(0)
 
     # Canny Edge Detection
-    edges_result = cv2.Canny(image=img_blur, threshold1=100, threshold2=200)
+    edges_result = cv2.Canny(image=img, threshold1=100, threshold2=200)
     contours, _ = cv2.findContours(edges_result, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     mask = np.zeros_like(edges_result)
@@ -36,17 +40,13 @@ def local_brightness(img, min_contour_area_threshold, max_contour_area_threshold
     num_landmarks = len(filtered_contours)
     print("Number of Bright Landmarks:", num_landmarks)
 
-
-    # Merging contours
-    merged_contours = merge_contours(contours, contours, max_neighbor_distance=10)
-    filtered_contours = merged_contours
-
     # Drawing the contours on the original image
-    img_color = cv2.applyColorMap(img_gray, cmap)
+    img_color = cv2.applyColorMap(original, cmap)
     img_with_bright_contours = img_color.copy()
     cv2.drawContours(img_with_bright_contours, filtered_contours, -1, (255, 0, 0), 2)  # Draw blue contours
     return img_with_bright_contours, filtered_contours
 
+cmap = get_mpl_colormap(plt.cm.copper)
 
 if __name__ == "__main__":
     # img = cv2.imread('CurlyTorpedo.jpg')
@@ -57,8 +57,8 @@ if __name__ == "__main__":
 
     img2_colored = cv2.applyColorMap(img2, cmap)
 
-    min_bright_contour_area_threshold = 260 #260
-    max_bright_contour_area_threshold = 1000 #1000
+    min_bright_contour_area_threshold = 2500 #260
+    max_bright_contour_area_threshold = 100000 #1000
     bright_result, bright_contours = local_brightness(img2, min_bright_contour_area_threshold, max_bright_contour_area_threshold)
     cv2.imshow('bright', bright_result)
     cv2.waitKey(0)
