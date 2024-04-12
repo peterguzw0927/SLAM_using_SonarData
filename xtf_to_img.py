@@ -32,8 +32,8 @@ def xtf_to_img():
     data_array2 = np.array([item.data[1] for item in sonar_packets])
 
     # Scale down the 16-bit values to 8-bit values
-    scale_factor = 1.2
-    shift_factor = 20
+    scale_factor = 1
+    shift_factor = 0
     scaled_data_array = ((data_array / 65535) * 255 * scale_factor + shift_factor).astype(np.uint8)
     scaled_data_array2 = ((data_array2 / 65535) * 255 * scale_factor + shift_factor).astype(np.uint8)
 
@@ -51,7 +51,7 @@ def xtf_to_img():
     # # cmap = get_mpl_colormap(matplotlib.colormaps['sdoaia171'])
     # imgg = cv2.applyColorMap(concatenated_array, cmap)#cv2.COLORMAP_HOT)
     imgg = concatenated_array
-    
+
     return imgg
     # cv2.imshow('img', imgg)
     # cv2.waitKey(0)

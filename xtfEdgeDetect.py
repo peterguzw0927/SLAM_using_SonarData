@@ -3,6 +3,7 @@ import numpy as np
 import pyxtf
 import matplotlib.pyplot as plt
 from pixeltogeo import frame
+import os
 
 def merge_contours(bright_contours, dark_contours, max_neighbor_distance):
     merged_bright_contours = []
@@ -37,21 +38,25 @@ def merge_contours(bright_contours, dark_contours, max_neighbor_distance):
 
 def darkness(img, min_contour_area_threshold, max_contour_area_threshold):
 
-    # Convert the image to grayscale
-    # img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img_gray = img
+    # make local copy of img for display purposes
+    original = img
 
     # Adjust contrast and brightness levels in the grayscale image
-    alpha = 17
-    beta = 30
-    high_contrast_result = cv2.convertScaleAbs(img_gray, alpha=alpha, beta=beta)
-    img_blur = cv2.GaussianBlur(high_contrast_result, (7, 7), 0)
+    alpha = 10
+    beta = 10
+    img = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
 
-    cv2.imshow("blur", img_blur)
-    cv2.waitKey(0)
+    # Apply sequence of thresholding and blurring
+    img = cv2.GaussianBlur(img, (21, 21), 1000)
+    _, img = cv2. threshold(img, 109, 255, cv2.THRESH_BINARY)
+    img = cv2.GaussianBlur(img, (81, 81), 1000)
+    _, img = cv2. threshold(img, 130, 255, cv2.THRESH_BINARY)
+
+    # Remove center artifact
+    img[:,np.arange(1600,2400,dtype=int)] = 255
 
     # Canny Edge Detection
-    edges_result = cv2.Canny(image=img_blur, threshold1=100, threshold2=200)
+    edges_result = cv2.Canny(image=img, threshold1=100, threshold2=200)
     contours, _ = cv2.findContours(edges_result, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Create a mask image
@@ -62,39 +67,43 @@ def darkness(img, min_contour_area_threshold, max_contour_area_threshold):
     dilated_mask = cv2.dilate(mask, None, iterations=3)
     contours, _ = cv2.findContours(dilated_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+    # Filter contours based on size
     filtered_contours = [contour for contour in contours if min_contour_area_threshold <= cv2.contourArea(contour) <= max_contour_area_threshold]
-    
-    # merged_bright_contours, unmerged_bright_contours, unmerged_dark_contours = merge_contours(filtered_contours, filtered_contours, 10)
 
-    # all_contours = merged_bright_contours
-
-    filtered_contours = [contour for contour in contours if cv2.contourArea(contour) >= 400]
-
+    # Get number of landmarks detected
     num_landmarks = len(filtered_contours)
     print("Number of Dark Landmarks:", num_landmarks)
 
     # Drawing the contours on the original image
-    img_color = cv2.applyColorMap(img_gray, cmap)
+    img_color = cv2.applyColorMap(original, cmap)    # Apply colormap
     img_with_dark_contours = img_color.copy()
     cv2.drawContours(img_with_dark_contours, filtered_contours, -1, (0, 255, 0), 2)  # Draw green contours
     return img_with_dark_contours, filtered_contours
 
 def brightness(img, min_contour_area_threshold, max_contour_area_threshold):
 
-    # img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img_gray = img
-    inverted_img_gray = 255 - img_gray
+    # make local copy of img for display purposes
+    original = img
+
+    # invert
+    img = 255 - img
 
     # Adjust contrast and brightness levels in the inverted grayscale image
-    alpha = 3.5
-    beta = 40
-    high_contrast_result = cv2.convertScaleAbs(inverted_img_gray, alpha=alpha, beta=beta)
-    img_blur = cv2.GaussianBlur(high_contrast_result, (1, 1), 0)
+    alpha = 2.5
+    beta = -120
+    img = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
+
+    # Apply sequence of thresholding and blurring
+    img = cv2.GaussianBlur(img, (51, 51), 1000)
+    _, img = cv2. threshold(img, 245, 255, cv2.THRESH_BINARY)
+    img = cv2.GaussianBlur(img, (81, 81), 1000)
+    _, img = cv2. threshold(img, 170, 255, cv2.THRESH_BINARY)
 
     # Canny Edge Detection
-    edges_result = cv2.Canny(image=img_blur, threshold1=100, threshold2=200)
+    edges_result = cv2.Canny(image=img, threshold1=100, threshold2=200)
     contours, _ = cv2.findContours(edges_result, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+    # Create a mask image
     mask = np.zeros_like(edges_result)
     cv2.drawContours(mask, contours, -1, (255), thickness=cv2.FILLED)
 
@@ -102,12 +111,15 @@ def brightness(img, min_contour_area_threshold, max_contour_area_threshold):
     dilated_mask = cv2.dilate(mask, None, iterations=3)
     contours, _ = cv2.findContours(dilated_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+    # Filter contours based on size
     filtered_contours = [contour for contour in contours if min_contour_area_threshold <= cv2.contourArea(contour) <= max_contour_area_threshold]
+    
+    # Get number of landmarks
     num_landmarks = len(filtered_contours)
     print("Number of Bright Landmarks:", num_landmarks)
 
     # Drawing the contours on the original image
-    img_color = cv2.applyColorMap(img_gray, cmap)
+    img_color = cv2.applyColorMap(original, cmap)
     img_with_bright_contours = img_color.copy()
     cv2.drawContours(img_with_bright_contours, filtered_contours, -1, (255, 0, 0), 2)  # Draw blue contours
     return img_with_bright_contours, filtered_contours
@@ -151,7 +163,7 @@ def read_xtf(path):
     data_array2 = np.array([item.data[1] for item in sonar_packets])
 
     # Scale down the 16-bit values to 8-bit values
-    scale_factor = 2
+    scale_factor = 1
     shift_factor = 0
     scaled_data_array = ((data_array / 65535) * 255 * scale_factor + shift_factor).astype(np.uint8)
     scaled_data_array2 = ((data_array2 / 65535) * 255 * scale_factor + shift_factor).astype(np.uint8)
@@ -166,75 +178,79 @@ def read_xtf(path):
 
     return img
 
-
 cmap = get_mpl_colormap(plt.cm.copper)
 
 if __name__ == "__main__":
     # img = cv2.imread('CurlyTorpedo.jpg')
-    path = '../palau_files/20190122t024459z_leg015_survey_ss75.xtf'
-    img2 = read_xtf(path)
-    cv2.imshow("Original Input", img2)
-    cv2.waitKey(0)
+    # path = '../palau_files/20190122t024459z_leg015_survey_ss75.xtf'
 
-    img2_colored = cv2.applyColorMap(img2, cmap)
-    
+    directory = "../palau_files"
+    for filename in os.listdir(directory):
+        path = os.path.join(directory, filename)
+        if os.path.isfile(path):
+            img2 = read_xtf(path)
+            cv2.imshow("Original Input", img2)
+            cv2.waitKey(0)
 
-    min_dark_contour_area_threshold = 200 #200
-    max_dark_contour_area_threshold = 2500 #2500
-    dark_result, dark_contours = darkness(img2, min_dark_contour_area_threshold, max_dark_contour_area_threshold)
+            img2_colored = cv2.applyColorMap(img2, cmap)
+            
+            min_dark_contour_area_threshold = 2500 #200
+            max_dark_contour_area_threshold = 200000 #2500
+            dark_result, dark_contours = darkness(img2, min_dark_contour_area_threshold, max_dark_contour_area_threshold)
 
-    cv2.imshow('dark', dark_result)
-    cv2.waitKey(0)
+            # cv2.imshow('dark', dark_result)
+            # cv2.waitKey(0)
 
-    min_bright_contour_area_threshold = 260 #260
-    max_bright_contour_area_threshold = 1000 #1000
-    bright_result, bright_contours = brightness(img2, min_bright_contour_area_threshold, max_bright_contour_area_threshold)
-    cv2.imshow('bright', bright_result)
-    cv2.waitKey(0)
+            min_bright_contour_area_threshold = 2500 #260
+            max_bright_contour_area_threshold = 100000 #1000
+            bright_result, bright_contours = brightness(img2, min_bright_contour_area_threshold, max_bright_contour_area_threshold)
+            # cv2.imshow('bright', bright_result)
+            # cv2.waitKey(0)
 
-    # Merge contours
-    max_neighbor_distance = 5
-    merged_bright_contours, unmerged_bright_contours, unmerged_dark_contours = merge_contours(bright_contours, dark_contours, max_neighbor_distance)
+            # Merge contours
+            max_neighbor_distance = 5000
+            merged_bright_contours, unmerged_bright_contours, unmerged_dark_contours = merge_contours(bright_contours, dark_contours, max_neighbor_distance)
 
-    # Combine all contours into a single list
-    all_contours = merged_bright_contours + unmerged_bright_contours + unmerged_dark_contours
+            # Combine all contours into a single list
+            all_contours = merged_bright_contours + unmerged_bright_contours + unmerged_dark_contours
 
-    # Filter contours based on minimum area threshold
-    filtered_contours = [contour for contour in all_contours if cv2.contourArea(contour) >= 1000 and cv2.contourArea(contour) <= 10000]#570
-    overlaid_img = img2_colored.copy()
+            # Filter contours based on minimum area threshold
+            filtered_contours = [contour for contour in all_contours if cv2.contourArea(contour) >= 1000 and cv2.contourArea(contour) <= 200000]#570
+            overlaid_img = img2_colored.copy()
 
-    num_landmarks = len(filtered_contours)
-    print("Number of Landmarks:", num_landmarks)
-    cv2.drawContours(overlaid_img, filtered_contours, -1, (0, 255, 0), 2)  # Draw filtered contours
-    cv2.imshow('Overlayed Result', overlaid_img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+            num_landmarks = len(filtered_contours)
+            print("Number of Landmarks:", num_landmarks)
+            cv2.drawContours(overlaid_img, filtered_contours, -1, (0, 255, 0), 2)  # Draw filtered contours
+            cv2.imshow('Overlayed Result', overlaid_img)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
 
-    lat0_value = 37.7749
-    lon0_value = -122.4194
-    heading_value = 45.0
-    pixelIToM_value = 0.1
-    pixelJToM_value = 0.1
+            lat0_value = 37.7749
+            lon0_value = -122.4194
+            heading_value = 45.0
+            pixelIToM_value = 0.1
+            pixelJToM_value = 0.1
 
-    frame_instance = frame(lat0_value, lon0_value, heading_value, pixelIToM_value, pixelJToM_value)
+            frame_instance = frame(lat0_value, lon0_value, heading_value, pixelIToM_value, pixelJToM_value)
 
-    # After merging contours and filtering them, iterate over each contour
-    for contour in filtered_contours:
-        center = get_contour_center(contour)
-        if center is not None:
-            adjusted_center = adjust_coordinates(center, img2.shape)
-            print("Contour Center (Adjusted):",  adjusted_center)
+            # After merging contours and filtering them, iterate over each contour
+            for contour in filtered_contours:
+                center = get_contour_center(contour)
+                if center is not None:
+                    adjusted_center = adjust_coordinates(center, img2.shape)
+                    print("Contour Center (Adjusted):",  adjusted_center)
 
-            pixel_i, pixel_j = adjusted_center
-            lat, lon = frame_instance.pixelToGeo(pixel_i, pixel_j)
-            print("Geographical Coordinates (Latitude, Longitude):", lat, lon)
-        
-            # Draw a circle at the contour center
-            cv2.circle(overlaid_img, center, 5, (0, 0, 255), -1)  # Red circle
-        
-    # Display the overlaid image with contour centers
-    cv2.imshow('Overlayed Result with Contour Centers', overlaid_img)
-    cv2.waitKey(0)
+                    pixel_i, pixel_j = adjusted_center
+                    lat, lon = frame_instance.pixelToGeo(pixel_i, pixel_j)
+                    print("Geographical Coordinates (Latitude, Longitude):", lat, lon)
+                
+                    # Draw a circle at the contour center
+                    cv2.circle(overlaid_img, center, 5, (0, 0, 255), -1)  # Red circle
+                
+            # Display the overlaid image with contour centers
+            cv2.imshow('Overlayed Result with Contour Centers', overlaid_img)
+            cv2.waitKey(0)
+
     cv2.destroyAllWindows()
 
 
