@@ -19,6 +19,7 @@ Open up a new terminal
 - bash s2_run.bash
 
 # Python Dependency if you want to install from scratch #
+'''
 >cv_bridge
 >gtsam
 >matplotlib
@@ -31,8 +32,7 @@ Open up a new terminal
 >scipy
 >sensor_msgs
 >Shapely
+'''
 
 - Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
-tf
-tqdm
-pyyaml
+
