@@ -19,20 +19,20 @@ Open up a new terminal
 - bash s2_run.bash
 
 # Python Dependency if you want to install from scratch #
-'''
->cv_bridge
->gtsam
->matplotlib
->message_filters
->numpy
->opencv_python
->rosbag
->rospy
->scikit_learn
->scipy
->sensor_msgs
->Shapely
-'''
+```
+cv_bridge
+gtsam
+matplotlib
+message_filters
+numpy
+opencv_python
+rosbag
+rospy
+scikit_learn
+scipy
+sensor_msgs
+Shapely
+```
 
 - Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 
