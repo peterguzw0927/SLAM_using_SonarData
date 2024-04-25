@@ -18,7 +18,7 @@ Open up a new terminal
 - cd ws_sonar/ 
 - bash s2_run.bash
 
-# Python Dependency if you want to install from scratch #
+## Python Dependency if you want to install from scratch #
 ```
 cv_bridge
 gtsam
@@ -33,7 +33,7 @@ scipy
 sensor_msgs
 Shapely
 ```
-# ROS dependencies 
+## ROS dependencies 
 ```
 ROS-noetic
 catkin-pybind11
