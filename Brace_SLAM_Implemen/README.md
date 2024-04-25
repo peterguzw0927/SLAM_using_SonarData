@@ -33,6 +33,12 @@ scipy
 sensor_msgs
 Shapely
 ```
+# ROS dependencies 
+```
+ROS-noetic
+catkin-pybind11
+catkin-tools
+```
 
 - Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 
