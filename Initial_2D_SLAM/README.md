@@ -1,8 +1,8 @@
 # Our initial 2D slam model in first semester 
 
-Run demo.py or test.py
+Run **demo.py** or **test.py**
 
-Dependencies:
+**Dependencies:**
 - numpy
 - matplotlib
 
