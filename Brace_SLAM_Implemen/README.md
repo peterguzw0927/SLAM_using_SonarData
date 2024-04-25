@@ -1,8 +1,6 @@
-## An user implementation of existing slam algorithm, friendly to use, no dependency needed.##
-
-- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
+# An user implementation of existing slam algorithm, friendly to use, no dependency needed.
 - A video of our working implementation: https://drive.google.com/file/d/1W8NGoUxOD8sDb5Ks5Um5IE0GSRQNU36G/view?usp=drive_link
-
+## Download steps
 Download the vm containing our SLAM algorithm here:
 https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
 
@@ -22,17 +20,19 @@ Open up a new terminal
 
 # Python Dependency if you want to install from scratch #
 >cv_bridge
-gtsam
-matplotlib
-message_filters
-numpy
-opencv_python
-rosbag
-rospy
-scikit_learn
-scipy
-sensor_msgs
-Shapely
+>gtsam
+>matplotlib
+>message_filters
+>numpy
+>opencv_python
+>rosbag
+>rospy
+>scikit_learn
+>scipy
+>sensor_msgs
+>Shapely
+
+- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 tf
 tqdm
 pyyaml
