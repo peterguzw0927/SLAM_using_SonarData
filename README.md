@@ -1,17 +1,6 @@
 # Senior_Design
 # Simultaneous Localization and Mapping for Underwater Robots
 
-Download the vm containing our SLAM algorithm here:
-https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
-After opening the .vm file with vmware workstation 17 pro, password is 123
-Open up a new terminal
--cd ws_sonar/ 
--catkin build
--bash s1_run.bash
-Open up a new terminal
--cd ws_sonar/ 
--bash s2_run.bash
-
 Sonar surveys of the seabed are essential to many offshore activities, such as offshore wind farm construction and subsea cable inspection. Uncrewed underwater vehicles (UUVs) provide a lower cost means of gathering this data, but underwater localization is a significant challenge. Without precise localization, survey data gathered by an underwater vehicle is far less useful.  Precise subsea navigation is a significant technical challenge because ubiquitous position reference signals, such as GPS, are unavailable for localization. The state of practice is to use acoustic beacon localization, but the accuracy is limited by the accuracy to which the beacon itself can be placed. Moreover, the beacons are often left in the ocean, littering the seafloor. A potential solution is to use the survey data itself to improve localization. Simultaneous localization and mapping (SLAM) provide techniques for correlating multiple sightings of landmarks in data and using those sightings to correct the estimated position of the vehicle. This corrected localization can then be used to warp the recorded data to better align with its true location. 
 
 Many SLAM algorithms exist in the literature and are available as open-source software packages, each with its advantages and disadvantages.  This capstone project would involve:
