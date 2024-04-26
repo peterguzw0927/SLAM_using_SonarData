@@ -1,0 +1,3 @@
+[submodule "HoloOcean_scripts"]
+	path = HoloOcean_scripts
+	url = https://github.com/robbiedantonio/HoloOcean_scripts.git
