@@ -8,7 +8,7 @@ This document provides an overview of the software modules, dependencies, and in
 
 ## Flow Chart of Module Dependencies
 
-[Insert flow chart or diagram illustrating the dependencies between modules]
+![Flow Chart](https://github.com/peterguzw0927/Senior_Design/assets/130591044/55051beb-e09a-4852-8ec7-d313dbbab899)
 
 ## Installation Guide
 
