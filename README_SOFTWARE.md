@@ -90,4 +90,12 @@ In the terminal:
 git clone https://github.com/peterguzw0927/Senior_Design.git
 cd ../path/to/Senior_Design
 pip install -r requirements.txt
+cd sonarSlam
 ```
+Example (no plotting):
+
+`python cSlam.py '/path/to/xtfDirectory'`
+
+Example (with plotting):
+
+`python cSlam.py '/path/to/xtfDirectory' True`
