@@ -24,7 +24,7 @@ Prototype SLAM software
 Final report detailing the selected SLAM algorithm
 Analysis supporting the algorithm, in particular how the algorithm performs on real data
 
-# Previous Report
+# Previous Reports
 
 [1st Prototype Testing Report.pdf](https://github.com/peterguzw0927/Senior_Design/files/15134552/11_16.Prototype.test.report.1.pdf)
 
