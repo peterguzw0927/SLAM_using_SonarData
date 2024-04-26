@@ -4,7 +4,7 @@
 - A video of our working implementation: https://drive.google.com/file/d/1W8NGoUxOD8sDb5Ks5Um5IE0GSRQNU36G/view?usp=drive_link
 
 ## Download steps
-Download the vm containing our SLAM algorithm here:
+Download the vm containing Bruce_SLAM algorithm here:
 https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
 
 After opening the .vm file with vmware workstation 17 pro, password is 123
