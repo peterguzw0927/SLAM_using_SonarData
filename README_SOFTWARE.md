@@ -15,7 +15,7 @@ This document provides an overview of the software modules, dependencies, and in
 
 To install the project software stack from scratch, follow these steps:
 
-1. **Prerequisites:**
+# 1. **Prerequisites:**
 
 ## holoocean==0.5.8
 Holoocean is a simulator operated on Unreal Engine4, which can be used to generate sonar datasets (IMU though).
@@ -44,7 +44,7 @@ NumPy is the fundamental package for scientific computing with Python, providing
 ## opencv-python>=4.1.1
 OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library, that provides various algorithms and tools for image and video processing.
 
-2. **Installation Steps:**
+# 2. **Installation Steps:**
 
 In the terminal:
 
