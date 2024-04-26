@@ -4,6 +4,9 @@ This document provides an overview of the software modules, dependencies, and in
 
 ## Overview of Main Software Modules
 
+### cSlam.py
+- Main function for sonarSlam implementation
+
 ### process_xtf_files.py
 - Read and sort sonar structs by timestamp
 - Return the X(longitude) and Y(latitude) coordinates of the vehicle
