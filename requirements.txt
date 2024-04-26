@@ -1,0 +1,9 @@
+holoocean==0.5.8
+matplotlib>=3.8.0
+pandas>=1.1.4
+seaborn>=0.11.0
+pyxtf>=1.4.0
+geopy==2.4.1
+tqdm>=4.64.0
+numpy>=1.23.5
+opencv-python>=4.1.1
