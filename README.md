@@ -9,6 +9,10 @@ Our main file is named `cSlam.py` in the root folder. The `sonarSlam` folder hos
 ### Data Source
 - Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
 - Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
+- Palau Dataset: Underwater Survey of a WWII Torpedo Dump provided by Eric Terril, Scripps Institution of Oceanography.
+
+> [!WARNING]
+> The Palau Dataset is Confidential.
 
 ## Supplemental materials
 There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
