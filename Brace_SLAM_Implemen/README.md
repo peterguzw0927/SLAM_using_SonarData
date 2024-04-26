@@ -2,6 +2,10 @@
 <img width="625" alt="Screenshot 2024-04-25 at 22 25 51" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/a867f63c-7140-4087-8a5a-51bdeafd036c">
 
 - A video of our working implementation: https://drive.google.com/file/d/1W8NGoUxOD8sDb5Ks5Um5IE0GSRQNU36G/view?usp=drive_link
+
+## Reference
+- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
+
 ## Download steps
 Download the vm containing our SLAM algorithm here:
 https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
@@ -56,6 +60,4 @@ catkin-tools
 - Bar30 pressure sensor
 -  KVH-DSP-1760 fiber optic gyroscope (optional)
 
-## Reference
-- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 
