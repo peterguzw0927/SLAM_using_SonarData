@@ -4,8 +4,28 @@ This document provides an overview of the software modules, dependencies, and in
 
 ## Overview of Main Software Modules
 
-### Module 1: [Module_Name]
+### process_xtf_files.py
+  -Read and sort sonar structs by timestamp
+  -Return the X(longitude) and Y(latitude) coordinates of the vehicle
 
+### landmark_detection.py
+  -Transform sonar pings from 16-bit to 8-bit for image processing with CV2
+  -Detects dark and bright contours in the side-scan sonar image
+  -Merge contours and filter them based on area thresholds
+  -Computes the center of each contour and adjusts contour coordinates with respect to the center of the image
+  -Convert pixel coordinates to geographical coordinates using a predefined frame instance
+  -Retrieves all landmark coordinates from segmented paths
+
+### pixeltogeo.py
+  -Defines a Python class called frame that represents a coordinate system for sonar side-scan data
+  -Computes rotation and scale factors based on the frame's parameters
+  -Convert pixel coordinates to geographic coordinates
+
+###
+
+### plotting.py
+  -
+  
 ## Flow Chart
 
 ![Flow Chart](https://github.com/peterguzw0927/Senior_Design/assets/130591044/55051beb-e09a-4852-8ec7-d313dbbab899)
