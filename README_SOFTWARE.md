@@ -118,3 +118,8 @@ Example (with plotting):
 ```bash
 python cSlam.py '/path/to/xtfDirectory' True
 ```
+
+### 2.5 Installing dataset
+- If you haven't download the xtf files from home page:
+- Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
+- Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
