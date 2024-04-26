@@ -48,6 +48,13 @@ ROS-noetic
 catkin-pybind11
 catkin-tools
 ```
+## Hardware of UUV
+Occulus M750d imaging sonar
+Occulus M1200 imaging sonar (optional)
+Rowe SeaPilot DVL
+Vectornav 100 MEMS IMU
+Bar30 pressure sensor
+KVH-DSP-1760 fiber optic gyroscope (optional)
 
 - Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 
