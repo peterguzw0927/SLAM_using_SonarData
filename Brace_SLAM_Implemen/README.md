@@ -23,8 +23,9 @@ Open up a new terminal
 ## Sample rosbag data ##
 - https://drive.google.com/file/d/1nmiFfyk8mVssLqgac7BOe4_RPBP6Wnc9/view
 - Reference: https://arxiv.org/abs/2202.08359
-- The ros_bag data contains DVL data, Depth data,IMU data, and sonar oculus data
+- The ros_bag contains DVL data, Depth data,IMU data, and sonar oculus data
 - If you want to switch to your own data,make sure you have the right type of senser data
+- The sample data comes from a marina at the United States Merchant Marine Academy (USMMA).
 
 ## Python Dependency if you want to install from scratch #
 ```
