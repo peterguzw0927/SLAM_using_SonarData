@@ -3,9 +3,6 @@
 
 - A video of our working implementation: https://drive.google.com/file/d/1W8NGoUxOD8sDb5Ks5Um5IE0GSRQNU36G/view?usp=drive_link
 
-## Reference
-- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
-
 ## Download steps
 Download the vm containing our SLAM algorithm here:
 https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
@@ -60,4 +57,6 @@ catkin-tools
 - Bar30 pressure sensor
 -  KVH-DSP-1760 fiber optic gyroscope (optional)
 
+## Reference of Bruce-SLAM
+- Reference github:https://github.com/jake3991/sonar-SLAM/tree/main/bruce_slam
 
