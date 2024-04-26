@@ -20,6 +20,10 @@ Open up a new terminal
 - cd ws_sonar/ 
 - bash s2_run.bash
 
+## Sample data ##
+- https://drive.google.com/file/d/1nmiFfyk8mVssLqgac7BOe4_RPBP6Wnc9/view
+- Reference: https://arxiv.org/abs/2202.08359
+
 ## Python Dependency if you want to install from scratch #
 ```
 cv_bridge
