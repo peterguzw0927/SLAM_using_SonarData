@@ -1,4 +1,7 @@
 # Hardware platforms
+
+Given that the project is completely software-based, there are very few hardware components.
+
 ## HoloOcean Requirements
 - To utilize the HoloOcean underwater simulator effectively, you'll need access to a computer equipped with a strong GPU. This requirement arises from the simulator's foundation on Unreal Engine 4, a graphics-intensive platform that demands substantial graphical processing power. If your current computer lacks a robust GPU, fear not—alternative options exist. Consider leveraging the BU SCC (Boston University Shared Computing Cluster), a computer cluster optimized for cloud computation. Through Secure Shell (SSH) technology, you can remotely access the cluster's resources, potentially including GPUs tailored for graphical rendering tasks. However, keep in mind that GPU availability may vary, necessitating an application process for access to dedicated GPU resources. By navigating these options, you can ensure a seamless experience with the HoloOcean simulator, unlocking its full potential for underwater exploration and simulation.
   
