@@ -11,7 +11,7 @@ Our main file is named `cSlam.py` in the root folder. The `sonarSlam` folder hos
 - Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
 - Palau Dataset: https://drive.google.com/file/d/1pBIgKkwpcG0Ij9Ok4jd9EsvKPPvTf-O6/view
 
-# Supplemental materials
+## Supplemental materials
 There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
 ### Basic_2D_SLAM approach
 The `initial_2D_SLAM` folder houses our foundational 2D SLAM (Simultaneous Localization and Mapping) algorithm. This approach sets up a basic 2D meshgrid world populated with a simulated Unmanned Underwater Vehicle (UUV) and landmarks. It's designed to be straightforward to configure and utilize, making it an ideal starting point for those new to SLAM algorithms.
