@@ -94,8 +94,12 @@ cd sonarSlam
 ```
 Example (no plotting):
 
-`python cSlam.py '/path/to/xtfDirectory'`
+```bash
+python cSlam.py '/path/to/xtfDirectory'
+```
 
 Example (with plotting):
 
-`python cSlam.py '/path/to/xtfDirectory' True`
+```bash
+python cSlam.py '/path/to/xtfDirectory' True
+```
