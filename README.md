@@ -24,6 +24,15 @@ Prototype SLAM software
 Final report detailing the selected SLAM algorithm
 Analysis supporting the algorithm, in particular how the algorithm performs on real data
 
+# Previous Report
+
+[1st Prototype test report.pdf](https://github.com/peterguzw0927/Senior_Design/files/15134552/11_16.Prototype.test.report.1.pdf)
+[2nd Prototype Testing Report.pdf](https://github.com/peterguzw0927/Senior_Design/files/15134555/2nd.Prototype.Testing.Report.1.pdf)
+[Final Testing Report.pdf](https://github.com/peterguzw0927/Senior_Design/files/15134557/Final.Testing.Report.1.pdf)
+
+[Team16_User Manual.pdf](https://github.com/peterguzw0927/Senior_Design/files/15134558/Team16_User.Manual.1.pdf)
+
+
 # Intellectual Property
 
 As for intellectual property issues, the datasets are not open and should not be shared. Pending a decision from legal, the final report would likely be Draper proprietary.  There is no objection to the software prototype developed under the clinic being released as open source.
