@@ -1,4 +1,3 @@
-holoocean==0.5.8
 matplotlib>=3.8.0
 pandas>=1.1.4
 seaborn>=0.11.0
