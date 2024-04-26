@@ -40,12 +40,12 @@ Draper has access to the deep ocean dataset captured during the search for Air F
 ## Skipped: 
 - Enabled real-time navigation for continuous position and orientation updates.
 - Integrated relocalization for swift and precise position recalibration.
+- Created graph of robot poses and landmark coordinates and performed graph optimization using the g2o graph optimization package
 ## Final:
 - Explored diverse types of sonar datasets. 
 - Successfully processed the sonar dataset, generating images and Inertial Navigation System (INS) data. 
 - Precisely identified correct landmarks from the torpedo dump sonar dataset, employing filtering and edge detection techniques. 
 - Calculated geographical coordinates of each landmark relative to the vehicle position. 
-- Performed pose graph optimization using landmark coordinates to refine the vehicle trajectory. 
 - Reviewed and discussed the final corrected trajectory of the vehicle with the client.
 
 
