@@ -5,9 +5,9 @@ from process_XTF_files import xtf_read_sort
 from nav_data import *
 from landmark_detection import *
 from plotting import *
-from slam import *
+# from slam import *
 from group_landmarks import *
-from slam_g2o import *
+from slam_stuff.slam_g2o import *
 
 import matplotlib.pyplot as plt
 
@@ -42,8 +42,11 @@ graph_slam = GraphSLAM2D(verbose=True)
 
 
 for i, coord in enumerate(robot_coordinates):
-	# graph_slam.add_fixed_pose(coord, i)
-	graph_slam.add_fixed_pose(g2o.SE2(coord[0], coord[1], i))	# Takes in x, y, theta
+	# Add a pose vertex, takes in x, y, theta
+	graph_slam.add_fixed_pose(g2o.SE2(coord[0], coord[1], ))
+
+	# Add an edge pointing to the next pose vertex, takes in northings, eastings, heading
+	graph_slam.add_odometry(northings=, eastings=, heading=, information=0.1*np.eye(3))
 
 # for landmark in landmark_coordinates:
 # 	graph_slam.add_landmark(landmark[0], landmark[1], np.eye(2), pose_id=4)

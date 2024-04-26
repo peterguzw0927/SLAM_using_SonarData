@@ -1,0 +1,66 @@
+
+(A) Graph Design:
+	- Two node types:
+		1. Robot pose
+			- Contains the current xy coordinates of the robot, as well as its heading
+			- Contains timestamp of 
+		2. Landmark
+			- Contains xy coordinates of a known landmark, acquired from the edge detection
+			- Contains a unique landmark_id
+	- Two edge types:
+		1. Odometry edges
+			- Model the movement of the robot
+			- Encodes the following data:
+				1. Translation: the change in xy position from the previous node to the current node
+				2. Rotation: the change in heading from the previous node to the current node
+				3. Uncertainty: Predefined standard deviation for xy position and heading
+				4. Some way to identify start and end node of edge, probably handled by g2o
+		2. Measurement edges
+			- Added based on the routine described in (B)
+			- Encodes the following data:
+				1. Timestamp of robot pose node
+				2. Distance between the two nodes in kilometers
+				3. Uncertainty: not sure about this, maybe the distance between the observed
+					point and the known point?
+				4. landmark_id of landmark node
+
+(B) Making the graph:
+	1. Iterate through all robot data points. That is, through all sonar_structs
+	2. For each point, do:
+		1. Extract xy coordinates, heading
+		2. Extract port/starbord sonar pings
+		3. For each sonar ping, do:
+			1. Check for bright spots above a certain threshhold, and dark spots below
+				a certain threshhold
+			2. For each of these spots, compute their xy coordinate based on robot's
+				current xy coordinate and heading. For now, won't account for pitch and roll
+			3. For each spot, do:
+				1. Check if position is within k meters of any predetermined landmarks, where
+					k is a tunable parameter representing the maximum acceptable distance between
+					an observed and known landmark. Do:
+						1. If yes, add a measurement edge between current point and known landmark vertex
+						2. If no, increment a "thrown_away_landmark" counter
+		4.  Add odometry edge:
+			1. Caculate difference in x position and y position, add to edge
+			2. Calculate difference in heading, add to edge
+
+(C) TODO:
+	1. Probably convert landmark list to a dictionary with integer keys
+	2. Implement get_landmarks()
+	3. Implement associate_landmarks()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
