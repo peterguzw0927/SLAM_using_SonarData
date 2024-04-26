@@ -28,3 +28,6 @@ Analysis supporting the algorithm, in particular how the algorithm performs on r
 
 As for intellectual property issues, the datasets are not open and should not be shared. Pending a decision from legal, the final report would likely be Draper proprietary.  There is no objection to the software prototype developed under the clinic being released as open source.
 
+# Future to do list
+If time permits, we plan to extensively test our SLAM algorithm in diverse real-world scenarios and compare its performance with established solutions like Blue-ROV SLAM. Through comprehensive evaluations, we aim to identify strengths and weaknesses, informing further optimization efforts to improve the system's reliability and effectiveness.
+
