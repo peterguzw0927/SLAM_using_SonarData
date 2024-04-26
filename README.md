@@ -4,6 +4,9 @@
 <img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
 
 # Quick start info
+## Sonar SLAM Algorithm
+The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
+
 ## Basic_2D_SLAM approach
 The initial_2D_SLAM folder houses our foundational 2D SLAM (Simultaneous Localization and Mapping) algorithm. This approach sets up a basic 2D meshgrid world populated with a simulated Unmanned Underwater Vehicle (UUV) and landmarks. It's designed to be straightforward to configure and utilize, making it an ideal starting point for those new to SLAM algorithms.
 
@@ -12,9 +15,6 @@ In the HoloOcean scripts folder, you'll find the necessary code to interface wit
 
 ## Bruce SLAM Implementation
 Contained within the bruce_slam implementation folder is an existing implementation of the Bruce SLAM algorithm. Reference:https://github.com/jake3991/sonar-SLAM.git. We packaged neatly into a .vm file format. Bruce SLAM is a sonar-based SLAM algorithm renowned for its robustness and efficiency. This implementation aims to streamline the usage process, requiring no additional dependencies and offering ease of integration into existing projects. Whether you're conducting research or developing applications in underwater robotics, this implementation provides a powerful tool for underwater mapping and navigation tasks.
-
-## Sonar SLAM Algorithm
-The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
 
 # Background & Motivation
 Sonar surveys of the seabed are essential to many offshore activities, such as offshore wind farm construction and subsea cable inspection. Uncrewed underwater vehicles (UUVs) provide a lower cost means of gathering this data, but underwater localization is a significant challenge. Without precise localization, survey data gathered by an underwater vehicle is far less useful.  Precise subsea navigation is a significant technical challenge because ubiquitous position reference signals, such as GPS, are unavailable for localization. The state of practice is to use acoustic beacon localization, but the accuracy is limited by the accuracy to which the beacon itself can be placed. Moreover, the beacons are often left in the ocean, littering the seafloor. A potential solution is to use the survey data itself to improve localization. Simultaneous localization and mapping (SLAM) provide techniques for correlating multiple sightings of landmarks in data and using those sightings to correct the estimated position of the vehicle. This corrected localization can then be used to warp the recorded data to better align with its true location. 
