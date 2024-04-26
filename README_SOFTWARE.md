@@ -5,8 +5,8 @@ This document provides an overview of the software modules, dependencies, and in
 ## Overview of Main Software Modules
 
 ### process_xtf_files.py
--Read and sort sonar structs by timestamp
--Return the X(longitude) and Y(latitude) coordinates of the vehicle
+- Read and sort sonar structs by timestamp
+- Return the X(longitude) and Y(latitude) coordinates of the vehicle
 
 ### landmark_detection.py
 -Transform sonar pings from 16-bit to 8-bit for image processing with CV2
