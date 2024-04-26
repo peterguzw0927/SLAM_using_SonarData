@@ -12,7 +12,7 @@ Our main file is named `cSlam.py` in the root folder. The `sonarSlam` folder hos
 - Palau Dataset: Underwater Survey of a WWII Torpedo Dump provided by Eric Terril, Scripps Institution of Oceanography.
 
 > [!WARNING]
-> The Palau Dataset is Confidential.
+> The Palau Dataset is confidential.
 
 ## Supplemental materials
 There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
