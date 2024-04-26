@@ -1,4 +1,4 @@
-# An user implementation of existing slam algorithm, friendly to use, no dependency needed.
+# An user implementation of Bruce-slam, friendly to use, no dependency needed.
 <img width="625" alt="Screenshot 2024-04-25 at 22 25 51" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/a867f63c-7140-4087-8a5a-51bdeafd036c">
 
 - A video of our working implementation: https://drive.google.com/file/d/1W8NGoUxOD8sDb5Ks5Um5IE0GSRQNU36G/view?usp=drive_link
