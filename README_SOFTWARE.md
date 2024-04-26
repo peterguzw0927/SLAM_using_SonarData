@@ -35,6 +35,11 @@ This document provides an overview of the software modules, dependencies, and in
 ### make_graph.py
 - Process the sonar data to identify potential landmarks and associate them with known landmarks
 - Create a graph structure representing the robot's trajectory and landmark positions for optimization
+- The function iterates over each element (sonar struct) in the sonar_struct_list.
+- For each sonar struct, it extracts the robot's coordinates (x_coord, y_coord), heading (heading), and timestamp using the get_timestamp function.
+- It then retrieves sonar data from the struct and processes it to identify potential landmarks using the get_landmarks function.
+- Next, it associates these potential landmarks with known landmarks within a certain radius, using the associate_landmarks function.
+- Optionally, if plot=True, it generates a plot showing the robot's path, potential landmarks seen by the robot, and confirmed landmarks from the landmark_list.
 
 ### plotting.py
 - Various plots depicting robot path, detected landmarks, and other relevant information
