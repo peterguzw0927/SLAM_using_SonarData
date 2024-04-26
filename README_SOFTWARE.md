@@ -45,9 +45,6 @@ To install the project software stack from scratch, follow these steps:
 
 ### 1. Prerequisites
 
-#### holoocean==0.5.8
-- Holoocean is a simulator operated on Unreal Engine4, which can be used to generate sonar datasets (IMU though).
-
 #### matplotlib>=3.8.0
 - Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.
 
