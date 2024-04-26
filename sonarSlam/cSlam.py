@@ -29,7 +29,7 @@ def main(directory, plotting=False):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or len(sys.argv) > 3:
-        print("Usage: python main.py <directory containing xtf files> [plotting True/False]")
+        print("Usage: python cSlam.py <directory containing xtf files> [plotting True/False]")
         sys.exit(1)
     filepath = sys.argv[1]
     plotting = True if len(sys.argv) == 3 and sys.argv[2].lower() == 'true' else False
