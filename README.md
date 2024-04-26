@@ -31,12 +31,23 @@ Draper has access to the deep ocean dataset captured during the search for Air F
 
 # Expected Deliverables
 
-There is a significant software development and integration component to this project, but also a statistical component (quantifying goodness of fit), and a creative research aspect in landmark definition. 
+## Original: 
+- Simultaneous localization and mapping (SLAM) techniques correlate multiple sightings of landmarks in data to correct the estimated position of the vehicle. 
+- The corrected localization is used to warp recorded data for better alignment with its true location.
+- SLAM is generalizable and can handle various kinds of sonar datasets. 
+- Deliverables include prototype SLAM software and a final report outlining the selected SLAM algorithm. 
+- The final report includes an analysis supporting the algorithm's performance, particularly on real data.
+## Skipped: 
+- Enabled real-time navigation for continuous position and orientation updates.
+- Integrated relocalization for swift and precise position recalibration.
+## Final:
+- Explored diverse types of sonar datasets. 
+- Successfully processed the sonar dataset, generating images and Inertial Navigation System (INS) data. 
+- Precisely identified correct landmarks from the torpedo dump sonar dataset, employing filtering and edge detection techniques. 
+- Calculated geographical coordinates of each landmark relative to the vehicle position. 
+- Performed pose graph optimization using landmark coordinates to refine the vehicle trajectory. 
+- Reviewed and discussed the final corrected trajectory of the vehicle with the client.
 
-The main deliverable would be:
-Prototype SLAM software
-Final report detailing the selected SLAM algorithm
-Analysis supporting the algorithm, in particular how the algorithm performs on real data
 
 # Intellectual Property
 
