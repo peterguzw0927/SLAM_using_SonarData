@@ -5,7 +5,7 @@
 
 # Quick start info
 # Sonar SLAM Algorithm
-The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. The main python file is in the main folder named `c_slam.py` where all other helper functions are in the sonar_slam folder. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
+The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. The main python file is in the main folder named `cSlam.py` where all other helper functions are in the `sonarSlam` folder. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
 
 # Supplemental materials
 ## Basic_2D_SLAM approach
