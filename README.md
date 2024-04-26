@@ -1,8 +1,11 @@
 # Senior_Design
 # Simultaneous Localization and Mapping for Underwater Robots
 
-<img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
+<img width="255" alt="Screenshot 2024-04-25 at 22 20 55" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/1ced4fd5-7537-481d-a554-fd47507f14d7">
+An Unmanned Under water Vehicle (UUV)
 
+<img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
+UUV trajactory and landmarks alongside 
 
 Sonar surveys of the seabed are essential to many offshore activities, such as offshore wind farm construction and subsea cable inspection. Uncrewed underwater vehicles (UUVs) provide a lower cost means of gathering this data, but underwater localization is a significant challenge. Without precise localization, survey data gathered by an underwater vehicle is far less useful.  Precise subsea navigation is a significant technical challenge because ubiquitous position reference signals, such as GPS, are unavailable for localization. The state of practice is to use acoustic beacon localization, but the accuracy is limited by the accuracy to which the beacon itself can be placed. Moreover, the beacons are often left in the ocean, littering the seafloor. A potential solution is to use the survey data itself to improve localization. Simultaneous localization and mapping (SLAM) provide techniques for correlating multiple sightings of landmarks in data and using those sightings to correct the estimated position of the vehicle. This corrected localization can then be used to warp the recorded data to better align with its true location. 
 
