@@ -28,6 +28,12 @@ This document provides an overview of the software modules, dependencies, and in
 
 ### plotting.py
 - Various plots depicting robot path, detected landmarks, and other relevant information
+- `plot_landmarks(robot_coordinates, landmark_coordinates, grouped_coordinates=None, grouping_threshold=-8)`: Plots the robot's path and detected landmarks. Optionally, it can also plot grouped landmarks within a specified range.
+- `plot_path(sonar_struct_list)`: Extracts and plots position data from sonar structs, coloring the points based on the robot's heading.
+- `plot_over_time(sonar_struct_list)`: Plots robot positions with colors based on timestamps, and writes the data to a CSV file.
+- `plot_sorted_sonar_structs(sorted_sonar_structs)`: Plots all sonar structs from a sorted list, with colors based on their position in the list.
+- `plot_segmented_paths(linear_sections)`: Plots linear sections of the robot's path, each section in a different color.
+- `plot_segments_landmarks(segmented_paths)`: Plots linear segments of the robot's path and landmarks, each segment in a different color.
   
 ## Flow Chart
 
