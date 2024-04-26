@@ -26,6 +26,10 @@ This document provides an overview of the software modules, dependencies, and in
 - Segment paths to isolate straight passes of the robot
 - Group landmarks within a certain threshold distance
 
+### make_graph.py
+- Process the sonar data to identify potential landmarks and associate them with known landmarks
+- Create a graph structure representing the robot's trajectory and landmark positions for optimization
+
 ### plotting.py
 - Various plots depicting robot path, detected landmarks, and other relevant information
 - `plot_landmarks(robot_coordinates, landmark_coordinates, grouped_coordinates=None, grouping_threshold=-8)`: Plots the robot's path and detected landmarks. Optionally, it can also plot grouped landmarks within a specified range.
