@@ -9,7 +9,6 @@ Our main file is named `cSlam.py` in the root folder. The `sonarSlam` folder hos
 ### Data Source
 - Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
 - Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
-- Palau Dataset: https://drive.google.com/file/d/1pBIgKkwpcG0Ij9Ok4jd9EsvKPPvTf-O6/view
 
 ## Supplemental materials
 There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
