@@ -10,6 +10,9 @@ This document provides an overview of the software modules, dependencies, and in
 ### process_xtf_files.py
 - Read and sort sonar structs by timestamp
 - Return the X(longitude) and Y(latitude) coordinates of the vehicle
+- `get_xy_coordinates(packet)`:This function extracts the xy-coordinates from a packet, intended for coordinate-based sorting. However, it is currently unused in the code.
+- `get_timestamp(packet): `This function extracts the timestamp components (year, month, day, hour, minute, second, hundredths of a second) from a packet, facilitating timestamp-based sorting.
+- `xtf_read_sort(directory):`This function reads XTF files from a specified directory. For each file, it reads the packets, extracts sonar packets, and organizes them into a list. It then sorts this list based on timestamps extracted from the packets using the get_timestamp() function, returning the sorted list of sonar data structures.
 
 ### landmark_detection.py
 - Transform sonar pings from 16-bit to 8-bit for image processing with CV2
