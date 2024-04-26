@@ -20,9 +20,11 @@ Open up a new terminal
 - cd ws_sonar/ 
 - bash s2_run.bash
 
-## Sample data ##
+## Sample rosbag data ##
 - https://drive.google.com/file/d/1nmiFfyk8mVssLqgac7BOe4_RPBP6Wnc9/view
 - Reference: https://arxiv.org/abs/2202.08359
+- The ros_bag data contains DVL data, Depth data,IMU data, and sonar oculus data
+- If you want to switch to your own data,make sure you have the right type of senser data
 
 ## Python Dependency if you want to install from scratch #
 ```
