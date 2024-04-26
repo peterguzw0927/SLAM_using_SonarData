@@ -1,13 +1,14 @@
-# Senior_Design
+# Senior_Design_Team_16_SHARKS
 # Simultaneous Localization and Mapping for Underwater Robots
 
 <img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
 
 # Quick start info
 # Sonar SLAM Algorithm
-The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. The main python file is in the main folder named `cSlam.py` where all other helper functions are in the `sonarSlam` folder. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
+The sonar_SLAM folder hosts our proprietary SLAM algorithm tailored specifically for sonar data processing. Our main file is named `cSlam.py` in the root folder and all other helper functions are contained inside the `sonarSlam` folder. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
 
 # Supplemental materials
+There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
 ## Basic_2D_SLAM approach
 The initial_2D_SLAM folder houses our foundational 2D SLAM (Simultaneous Localization and Mapping) algorithm. This approach sets up a basic 2D meshgrid world populated with a simulated Unmanned Underwater Vehicle (UUV) and landmarks. It's designed to be straightforward to configure and utilize, making it an ideal starting point for those new to SLAM algorithms.
 
