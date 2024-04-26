@@ -7,8 +7,9 @@
 ## Sonar SLAM Algorithm
 Our main file is named `cSlam.py` in the root folder. The `sonarSlam` folder hosts our proprietary SLAM helper functions tailored specifically for sonar data processing. This algorithm takes in data from Inertial Navigation Systems (INS) and dead reckoning, subsequently processing it through edge detection, landmark detection, and ultimately, SLAM. By leveraging these techniques, our algorithm enables accurate and reliable mapping and localization in underwater environments, even in challenging conditions where traditional sensor data may be limited or noisy. Whether you're exploring marine ecosystems or conducting underwater inspections, our sonar SLAM algorithm offers a versatile solution for underwater mapping and navigation challenges.
 ### Data Source
-Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
-Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
+- Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
+- Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
+- Palau Dataset: https://drive.google.com/file/d/1pBIgKkwpcG0Ij9Ok4jd9EsvKPPvTf-O6/view
 
 # Supplemental materials
 There are some supplemental materials we used or referenced to throughout our process of tailoring cSLAM.
