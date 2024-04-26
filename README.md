@@ -4,7 +4,7 @@
 <img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
 
 # Quick start info
-## Initial_2D_SLAM approach
+## Basic_2D_SLAM approach
 The initial_2D_SLAM folder houses our foundational 2D SLAM (Simultaneous Localization and Mapping) algorithm. This approach sets up a basic 2D meshgrid world populated with a simulated Unmanned Underwater Vehicle (UUV) and landmarks. It's designed to be straightforward to configure and utilize, making it an ideal starting point for those new to SLAM algorithms.
 
 ## HoloOcean Scripts
