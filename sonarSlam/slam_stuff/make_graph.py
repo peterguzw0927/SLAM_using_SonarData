@@ -62,14 +62,12 @@ def associate_landmarks(potential_landmark_list, known_landmark_list, threshold=
     threshold: (km) radius that counts as a grouping
     '''
 
-    print(potential_landmark_list)
     potential_landmarks = np.array(potential_landmark_list)
     known_landmarks = np.array(known_landmark_list)
     associated_landmarks = []
 
     for potential_point in potential_landmark_list:
         distances = np.array([geodesic(potential_point, known_point).kilometers for known_point in known_landmark_list])
-        print(potential_point)
         within_threshold = known_landmarks[distances < threshold]
         associated_landmarks.extend(within_threshold)
 
@@ -113,14 +111,15 @@ def create_graph(sonar_struct_list, landmark_list, plot=False):
     # Convert lists to numpy array
     possible_landmarks = np.array(possible_landmarks)
     associated_landmarks = np.array(associated_landmarks)
-    print(associated_landmarks.shape)
     coords = np.array(coords)
     
     if plot:
         plt.figure(figsize=(10, 8)) 
         plt.scatter(coords[:,0], coords[:,1], color='b', label='Robot Path')
-        plt.scatter(associated_landmarks[:,0], associated_landmarks[:,1], color='g')
-        plt.scatter(possible_landmarks[:,0], possible_landmarks[:,1], color='r', s=1, label='Potential landmarks seen by robot')
+        if associated_landmarks.shape is not None:
+            plt.scatter(associated_landmarks[:,0], associated_landmarks[:,1], color='g')
+        if possible_landmarks is not None:
+            plt.scatter(possible_landmarks[:,0], possible_landmarks[:,1], color='r', s=1, label='Potential landmarks seen by robot')
         if landmark_list is not None:
             plt.scatter(*zip(*landmark_list), marker='x', label='Confirmed Landmarks')
         plt.legend()
