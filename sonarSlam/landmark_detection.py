@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import pyxtf
 import matplotlib.pyplot as plt
-from pixeltogeo import frame
+from sonarSlam.pixeltogeo import frame
 
 def merge_contours(bright_contours, dark_contours, max_neighbor_distance):
     merged_bright_contours = []

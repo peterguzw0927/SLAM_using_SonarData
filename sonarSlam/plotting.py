@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import datetime
 import csv
-from landmark_detection import get_landmark_coordinates
+from sonarSlam.landmark_detection import get_landmark_coordinates
 from matplotlib.patches import Circle
 from geopy.distance import distance
 

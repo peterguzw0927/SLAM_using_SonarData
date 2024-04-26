@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from geopy.distance import geodesic
 from tqdm import tqdm
 import sys
-sys.path.append('../')
-from pixeltogeo import frame
+# sys.path.append('../')
+from sonarSlam.pixeltogeo import frame
 
 def get_timestamp(packet):
     ''' Returns timestamps for timestamp-based sorting
