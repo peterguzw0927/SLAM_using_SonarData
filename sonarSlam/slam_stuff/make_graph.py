@@ -1,7 +1,7 @@
 '''
 Creates a graph that can be optimized using the g2o package
 '''
-import g2o
+# import g2o
 import numpy as np
 import matplotlib.pyplot as plt
 from geopy.distance import geodesic
