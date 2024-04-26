@@ -1,20 +1,15 @@
 # Senior_Design
 # Simultaneous Localization and Mapping for Underwater Robots
 
-<img width="255" alt="Screenshot 2024-04-25 at 22 20 55" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/1ced4fd5-7537-481d-a554-fd47507f14d7">
-An Unmanned Under water Vehicle (UUV)
-
-
 <img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
-UUV trajactory and landmarks alongside 
 
 Sonar surveys of the seabed are essential to many offshore activities, such as offshore wind farm construction and subsea cable inspection. Uncrewed underwater vehicles (UUVs) provide a lower cost means of gathering this data, but underwater localization is a significant challenge. Without precise localization, survey data gathered by an underwater vehicle is far less useful.  Precise subsea navigation is a significant technical challenge because ubiquitous position reference signals, such as GPS, are unavailable for localization. The state of practice is to use acoustic beacon localization, but the accuracy is limited by the accuracy to which the beacon itself can be placed. Moreover, the beacons are often left in the ocean, littering the seafloor. A potential solution is to use the survey data itself to improve localization. Simultaneous localization and mapping (SLAM) provide techniques for correlating multiple sightings of landmarks in data and using those sightings to correct the estimated position of the vehicle. This corrected localization can then be used to warp the recorded data to better align with its true location. 
 
 Many SLAM algorithms exist in the literature and are available as open-source software packages, each with its advantages and disadvantages.  This capstone project would involve:
-Requirements analysis. What are the features of a SLAM algorithm required for this problem?
-Algorithm tailoring. SLAM algorithms rely on “landmarks” in the data, but the definition and classification of some part of the data as a landmark is problem specific.
-Prototype implementation. Develop or modify open-source candidate solutions for testing.
-Evaluation. Using real world data, use the prototypes to “re-navigate” the vehicle trajectory and produce the best estimate of landmark location.
+- Requirements analysis. What are the features of a SLAM algorithm required for this problem?
+- Algorithm tailoring. SLAM algorithms rely on “landmarks” in the data, but the definition and classification of some part of the data as a landmark is problem specific.
+- Prototype implementation. Develop or modify open-source candidate solutions for testing.
+- Evaluation. Using real world data, use the prototypes to “re-navigate” the vehicle trajectory and produce the best estimate of landmark location.
 
 Draper engineers have previous experience working with several promising SLAM algorithms for vehicle localization applications.  The offline SLAM technique GraphSLAM could potentially work well here, and a project that focused on tailoring this technique to an underwater problem would be acceptable.  A wider-ranging exploration and performance comparison of SLAM algorithms that resulted in a less mature prototype would also be extremely useful.
 
