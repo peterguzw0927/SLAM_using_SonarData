@@ -73,10 +73,24 @@ To install the project software stack from scratch, follow these steps:
 - OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library, that provides various algorithms and tools for image and video processing.
 
 ### 2. Installation Steps
-
+- Install Python 3.12:
+First, ensure you have Python 3.12 installed on your system. You can download the installer from the official Python website (https://www.python.org/downloads/) and follow the installation instructions specific to your operating system.
+- Create a Virtual Environment in terminal:
+```bash
+python3.12 -m venv myenv
+```
+- Activate the Virtual Environment(Windows):
+```bash
+myenv\Scripts\activate
+```
+- Activate the Virtual Environment(Mac):
+```bash
+source myenv/bin/activate
+```
 In the terminal:
 
 ```bash
 git clone https://github.com/peterguzw0927/Senior_Design.git
 cd ../path/to/Senior_Design
 pip install -r requirements.txt
+```
