@@ -21,10 +21,13 @@ This document provides an overview of the software modules, dependencies, and in
 - Computes rotation and scale factors based on the frame's parameters
 - Convert pixel coordinates to geographic coordinates
 
-### https://nav_data.py/
+### nav_data.py
+- Obtain robot coordinates from navigation data
+- Segment paths to isolate straight passes of the robot
+- Group landmarks within a certain threshold distance
 
 ### plotting.py
-  -
+- Various plots depicting robot path, detected landmarks, and other relevant information
   
 ## Flow Chart
 
