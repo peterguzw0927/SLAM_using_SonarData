@@ -1,4 +1,6 @@
 # Senior_Design_Team_16_SHARKS
+<img width="232" alt="Screenshot 2024-04-26 at 17 10 54" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/382c3a71-8833-4155-b49e-146de25cc382">
+
 # Simultaneous Localization and Mapping for Underwater Robots
 
 <img width="712" alt="Screenshot 2024-04-25 at 17 49 24" src="https://github.com/peterguzw0927/Senior_Design/assets/114111503/d67548ab-cd21-4a5e-8454-422b680df239">
