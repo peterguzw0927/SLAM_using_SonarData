@@ -151,6 +151,6 @@ Open up a new terminal
 cd ws_sonar/ 
 bash s2_run.bash
 ```
-#### HoloOcean
+#### 3.3 HoloOcean
 Please refer to this website:
 - https://holoocean.readthedocs.io/en/master/usage/installation.html
