@@ -119,7 +119,35 @@ Example (with plotting):
 python cSlam.py '/path/to/xtfDirectory' True
 ```
 
-### 2.5 Installing dataset
+### 2.1 Installing dataset
 - If you haven't download the xtf files from home page:
 - Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
 - Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
+
+### 3. Installing supplemental materials
+#### 3.1 initial_2D_slam
+Dependencies:
+```bash
+pip install numpy
+pip install matplotlib
+```
+Run demo.py or test.py
+#### 3.2 Bruce_slam_implementation
+Download the vm containing Bruce_SLAM algorithm here:
+- https://drive.google.com/file/d/1jbgV3TAxXKJbmPuHgUchFqWUUs6io93y/view?usp=drive_link
+
+After opening the .vm file with vmware workstation 17 pro, password is 123
+
+Adjust the system RAM to at least 16GB
+
+Open up a new terminal
+```bash
+cd ws_sonar/ 
+catkin build
+bash s1_run.bash
+```
+Open up a new terminal
+```bash
+cd ws_sonar/ 
+bash s2_run.bash
+```
