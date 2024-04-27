@@ -119,7 +119,7 @@ Example (with plotting):
 python cSlam.py '/path/to/xtfDirectory' True
 ```
 
-### 2.1 Installing dataset
+#### 2.1 Installing dataset
 - If you haven't download the xtf files from home page:
 - Bassurelle Sandbanks SCI: https://drive.google.com/drive/folders/1rM4ISj9gcmGjYNPcOs2p_3LflSpfRMO_?usp=drive_link
 - Official Website: https://data.europa.eu/data/datasets/raw-side-scan-sonar-data-from-bassurelle-sandbanks-sci?locale=en
@@ -151,3 +151,6 @@ Open up a new terminal
 cd ws_sonar/ 
 bash s2_run.bash
 ```
+#### HoloOcean
+Please refer to this website:
+- https://holoocean.readthedocs.io/en/master/usage/installation.html
